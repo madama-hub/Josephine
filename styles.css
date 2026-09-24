@@ -62,10 +62,10 @@
 .header .visit-link {
   min-height: 48px;
   padding: 10px 22px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--red);
   border-radius: 999px;
 }
-.header .nav-right .visit-link:hover { background-color: var(--ink); color: var(--paper); }
+.header .nav-right .visit-link:hover { background-color: #5b201c; color: var(--paper); }
 @media (max-width: 700px) {
   .header .visit-link { min-height: 42px; padding: 8px 15px; }
 }
@@ -87,8 +87,8 @@
 .header-actions { display: flex; align-items: center; gap: 13px; margin-left: auto; }
 .header .nav-side { align-items: center; gap: 0; }
 .header .instagram-link { display: inline-flex; }
-.header-actions .visit-link { display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; }
-.header-actions .visit-link:hover { background: var(--ink); color: var(--paper); }
+.header-actions .visit-link { display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; background: var(--red); color: var(--paper); }
+.header-actions .visit-link:hover { background: #5b201c; color: var(--paper); }
 .language-switch { display: inline-flex; flex: none; overflow: hidden; border: 1px solid var(--red); border-radius: 999px; }
 .language-switch button { min-width: 43px; min-height: 44px; padding: 8px 11px; border: 0; background: transparent; color: var(--red); font-size: 12px; font-weight: 600; cursor: pointer; }
 .language-switch button[aria-pressed="true"] { background: var(--red); color: var(--paper); }
