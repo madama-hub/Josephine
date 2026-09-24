@@ -95,6 +95,18 @@
 .language-switch button:not([aria-pressed="true"]):hover { background: var(--butter); }
 .hero .button { border-radius: 999px; }
 
+/* Five hard-edged shades carry the yellow header into the page. */
+.header { background: var(--butter); border-bottom: 0; }
+.header .nav-side a:hover,
+.language-switch button:not([aria-pressed="true"]):hover { background: var(--paper); }
+.header-fade { display: grid; grid-template-rows: repeat(5, 18px); overflow: hidden; }
+.header-fade span { display: block; }
+.header-fade span:nth-child(1) { background: linear-gradient(90deg, var(--butter) 0 18%, #f8edbe 18% 29%, var(--butter) 29% 68%, #f8edbe 68% 81%, var(--butter) 81%); }
+.header-fade span:nth-child(2) { background: linear-gradient(90deg, #f8edbe 0 9%, #f9f0cf 9% 22%, #f8edbe 22% 49%, #f9f0cf 49% 62%, #f8edbe 62%); }
+.header-fade span:nth-child(3) { background: linear-gradient(90deg, #f9f0cf 0 31%, #faf4df 31% 42%, #f9f0cf 42% 74%, #faf4df 74% 90%, #f9f0cf 90%); }
+.header-fade span:nth-child(4) { background: linear-gradient(90deg, #faf4df 0 14%, var(--paper) 14% 27%, #faf4df 27% 55%, var(--paper) 55% 70%, #faf4df 70%); }
+.header-fade span:nth-child(5) { background: var(--paper); }
+
 /* A compact interactive corner inspired by the café's record wall. */
 .room-section { padding-top: 74px; padding-bottom: 95px; }
 .room-intro { display: flex; justify-content: space-between; align-items: end; gap: 45px; margin-bottom: 37px; }
@@ -145,6 +157,7 @@
   .room-layout { grid-template-columns: minmax(0, 1fr) minmax(235px, .72fr); gap: 25px; }
 }
 @media (max-width: 700px) {
+  .header-fade { grid-template-rows: repeat(5, 12px); }
   .header { display: flex; padding: 17px 6% 14px; }
   .header-actions { gap: 5px; }
   .header .nav-side { display: flex; }
