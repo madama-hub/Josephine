@@ -22,11 +22,6 @@
   .header > .nav-right { grid-column: 2; grid-row: 1; }
 }
 
-/* Carry the warm visit-section yellow into the masthead. */
-.header {
-  background: var(--butter);
-  border-bottom-color: #d5bd7a;
-}
 .header > .wordmark {
   font-size: clamp(48px, 4.8vw, 63px);
   letter-spacing: -.035em;
