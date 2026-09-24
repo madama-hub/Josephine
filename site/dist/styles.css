@@ -94,6 +94,7 @@
 .language-switch button[aria-pressed="true"] { background: var(--red); color: var(--paper); }
 .language-switch button:not([aria-pressed="true"]):hover { background: var(--butter); }
 .hero .button { border-radius: 999px; }
+.facade-scene { border-radius: 50% 50% 0 0; }
 
 /* The printed menu remains readable at the counter and on smaller screens. */
 .menu-categories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 5%; }
