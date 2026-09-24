@@ -10,7 +10,7 @@
     ['.header-actions .visit-link', 'Visit'],
     ['.hero .eyebrow', 'THE TASTE OF GOOD DAYS'],
     ['#hero-title', 'A coffee.<br>A sweet treat.<br><em>A little sunshine.</em>', 'html'],
-    ['.hero .intro', 'Homemade cakes, a good coffee, and time to savour it all. Welcome to Joséphine, your little meeting place in Nice.'],
+    ['.hero .intro', 'Homemade cakes, a good coffee, and time to savour it all. Welcome to Josephine, your little meeting place in Nice.'],
     ['.hero .button', 'Step inside'],
     ['.hero-footnote', '9 Rue Blacas, Nice <span aria-hidden="true">·</span> Enjoy here or take away', 'html'],
     ['.photo-topline span:first-child', 'WELCOME IN'],
@@ -19,18 +19,18 @@
     ['.maison .section-label span:first-child', '01 / THE SPACE'],
     ['.maison .section-label span:last-child', 'TAKE YOUR TIME.'],
     ['#maison-title', 'Little pleasures<br>make <em>beautiful days.</em>', 'html'],
-    ['.maison-layout > div:first-child > p:nth-of-type(1)', 'A sunny yellow façade. The smell of homemade cake. A warm cup in your hands. At Joséphine, simple pleasures have an address.'],
+    ['.maison-layout > div:first-child > p:nth-of-type(1)', 'A sunny yellow façade. The smell of homemade cake. A warm cup in your hands. At Josephine, simple pleasures have an address.'],
     ['.maison-layout > div:first-child > p:nth-of-type(2)', 'Come by for a coffee, stay for a break. A moment to yourself, or one to share, in the heart of Nice.'],
     ['.maison-layout .text-link', 'We have a seat for you'],
-    ['.maison-note .note-kicker', 'AT JOSÉPHINE'],
+    ['.maison-note .note-kicker', 'AT JOSEPHINE'],
     ['.maison-note p', '“Sometimes happiness<br>fits inside <em>a cup.</em>”', 'html'],
     ['.maison-note .note-footer', 'COFFEE, MATCHA & HOMEMADE TREATS'],
     ['.room-section .section-label span:first-child', '02 / INSIDE THE CAFÉ'],
-    ['.room-section .section-label span:last-child', 'JOSÉPHINE’S RECORD CORNER'],
+    ['.room-section .section-label span:last-child', 'JOSEPHINE’S RECORD CORNER'],
     ['.room-intro .eyebrow', 'TAKE A LOOK INSIDE'],
     ['#room-title', 'Choose a record.<br><em>Set the mood.</em>', 'html'],
     ['.room-intro > p', 'A nod to the café’s record corner: take your time, change the record and play with the light.'],
-    ['.room-stage-caption', 'A CORNER OF JOSÉPHINE · NICE'],
+    ['.room-stage-caption', 'A CORNER OF JOSEPHINE · NICE'],
     ['.room-control-label', 'YOUR TURN'],
     ['.room-controls h3', 'Today’s selection'],
     ['.room-record[data-record-choice="matin"] strong', 'Morning'],
@@ -68,7 +68,7 @@
     ['.visit-details > div:first-child h3', 'Find us'],
     ['.visit-details > div:nth-child(2) h3', 'Opening hours'],
     ['.visit-details > div:nth-child(2) p', 'Monday — Saturday <span>9:30 — 17:30</span><br>Sunday <span>Closed</span>', 'html'],
-    ['.visit-details .text-link', 'A little Joséphine every day'],
+    ['.visit-details .text-link', 'A little Josephine every day'],
     ['.footer-bottom > span:first-child', 'COFFEE, SUNSHINE & LOVE.'],
     ['.close-menu', 'Close'],
     ['.dialog-aside > p', 'Come in.<br><em>Take your time.</em>', 'html'],
@@ -101,15 +101,15 @@
     return element && { element, english, kind, french: kind === 'html' ? element.innerHTML : element.textContent };
   }).filter(Boolean);
   const attributes = [
-    ['.header > .wordmark', 'aria-label', 'Joséphine Café, home'],
+    ['.header > .wordmark', 'aria-label', 'Josephine Café, home'],
     ['.header nav', 'aria-label', 'Main navigation'],
     ['.room-records', 'aria-label', 'Choose a record'],
-    ['#cafe-room', 'aria-label', 'Interactive record corner at Joséphine Café: records, radio and pendant lamps'],
-    ['.facade-link', 'aria-label', 'Step inside Joséphine and explore the menu'],
-    ['.facade', 'alt', 'The yellow front of Joséphine Café at 9 Rue Blacas in Nice, with its open door and wooden benches.'],
+    ['#cafe-room', 'aria-label', 'Interactive record corner at Josephine Café: records, radio and pendant lamps'],
+    ['.facade-link', 'aria-label', 'Step inside Josephine and explore the menu'],
+    ['.facade', 'alt', 'The yellow front of Josephine Café at 9 Rue Blacas in Nice, with its open door and wooden benches.'],
     ['.close-menu', 'aria-label', 'Close the menu'],
     ['.menu-tabs', 'aria-label', 'Menu categories'],
-    ['meta[name="description"]', 'content', 'A sunny break at Joséphine Café in Nice. Coffee, matcha and homemade cakes at 9 Rue Blacas, Monday to Saturday, 9:30–17:30.']
+    ['meta[name="description"]', 'content', 'A sunny break at Josephine Café in Nice. Coffee, matcha and homemade cakes at 9 Rue Blacas, Monday to Saturday, 9:30–17:30.']
   ].map(([selector, name, english]) => {
     const element = document.querySelector(selector);
     return element && { element, name, english, french: element.getAttribute(name) };
@@ -124,7 +124,7 @@
     });
     attributes.forEach(({ element, name, french, english: translated }) => element.setAttribute(name, english ? translated : french));
     document.documentElement.lang = english ? 'en' : 'fr';
-    document.title = english ? 'Joséphine Café Nice — Coffee, matcha & homemade cakes · Rue Blacas' : frenchTitle;
+    document.title = english ? 'Josephine Café Nice — Coffee, matcha & homemade cakes · Rue Blacas' : frenchTitle;
     switches.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === (english ? 'en' : 'fr'))));
     try { localStorage.setItem('josephine-language', english ? 'en' : 'fr'); } catch { /* Private browsing can block storage. */ }
     window.dispatchEvent(new CustomEvent('josephine:languagechange', { detail: { lang: english ? 'en' : 'fr' } }));

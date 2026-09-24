@@ -114,7 +114,7 @@ function createRoom(THREE, room, stage) {
     ctx.fill();
     ctx.fillStyle = type;
     ctx.font = '11px Arial, sans-serif';
-    ctx.fillText('JOSÉPHINE  ·  NICE', 18, 28);
+    ctx.fillText('JOSEPHINE  ·  NICE', 18, 28);
     ctx.font = 'bold 26px Georgia, serif';
     ctx.fillText(title, 18, 222);
     const texture = new THREE.CanvasTexture(surface);

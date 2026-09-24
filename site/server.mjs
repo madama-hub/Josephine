@@ -16,4 +16,4 @@ const server = http.createServer(async (req, res) => {
     res.end(file);
   } catch { res.writeHead(404, { 'Content-Type': 'text/plain' }).end('Not found'); }
 });
-server.listen(4173, '127.0.0.1', () => console.log('Joséphine preview: http://127.0.0.1:4173'));
+server.listen(4173, '127.0.0.1', () => console.log('Josephine preview: http://127.0.0.1:4173'));

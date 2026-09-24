@@ -1,4 +1,4 @@
-# Joséphine Café
+# Josephine Café
 
 The website source is in `site/dist`. The current Render service publishes the repository root, so the same static files are included at the root for its live URL.
 
