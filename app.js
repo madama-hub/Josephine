@@ -48,3 +48,33 @@
     opener?.focus({ preventScroll: true });
   });
 })();
+
+(() => {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const elements = document.querySelectorAll([
+    '.maison .section-label',
+    '.maison-layout > *',
+    '.menu-section .section-label',
+    '.section-heading',
+    '.menu-categories .category',
+    '.menu-note',
+    '.visit-section .section-label',
+    '.visit-layout > *',
+    'footer > *'
+  ].join(', '));
+
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      currentObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+
+  elements.forEach(element => {
+    element.classList.add('scroll-reveal');
+    observer.observe(element);
+  });
+  document.documentElement.classList.add('reveal-enabled');
+})();

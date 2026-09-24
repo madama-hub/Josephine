@@ -44,3 +44,40 @@
 @media (max-width: 700px) {
   .header > .wordmark { font-size: clamp(22px, 5vw, 34px); }
 }
+
+/* Quiet, rounded navigation inspired by the café's reference. */
+.header { column-gap: 20px; }
+.header nav.nav-side { gap: 2px; }
+.header .nav-right { gap: 6px; }
+.header .nav-side a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  transition: background-color .2s ease, color .2s ease;
+}
+.header .nav-side a:hover { background-color: var(--butter); color: var(--red); }
+.header .visit-link {
+  min-height: 48px;
+  padding: 10px 22px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+}
+.header .nav-right .visit-link:hover { background-color: var(--ink); color: var(--paper); }
+@media (max-width: 700px) {
+  .header .visit-link { min-height: 42px; padding: 8px 15px; }
+}
+
+/* Content remains visible when motion is reduced or JavaScript is unavailable. */
+.reveal-enabled .scroll-reveal {
+  opacity: 0;
+  translate: 0 24px;
+  transition: opacity .7s ease, translate .7s cubic-bezier(.2,.65,.25,1);
+}
+.reveal-enabled .scroll-reveal.is-visible,
+.reveal-enabled .scroll-reveal:focus-within { opacity: 1; translate: 0 0; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-enabled .scroll-reveal { opacity: 1; translate: none; transition: none; }
+}
