@@ -43,23 +43,26 @@
     ['.menu-section .section-label span:first-child', '03 / AT THE COUNTER'],
     ['.menu-section .section-label span:last-child', 'THERE IS ALWAYS A GOOD REASON.'],
     ['#menu-title', 'A little something<br><em>for every mood.</em>', 'html'],
-    ['.section-heading > p', 'Morning coffee, afternoon matcha,<br>and a sweet treat that needs no excuse.', 'html'],
+    ['.section-heading > p', 'Morning coffee, afternoon matcha,<br> and a sweet treat that needs no excuse.', 'html'],
     ['.category[data-category="coffee"] h3', 'Coffee'],
     ['.category[data-category="coffee"] p', 'A coffee, a latte. Your favourite ritual.'],
     ['.category[data-category="coffee"] .category-tag', 'A GOOD START'],
+    ['.category[data-category="specials"] h3', 'Specials'],
+    ['.category[data-category="specials"] p', 'Flavoured lattes and gently spiced treats.'],
+    ['.category[data-category="specials"] .category-tag', 'TO DISCOVER'],
     ['.category[data-category="matcha"] h3', 'Matcha'],
-    ['.category[data-category="matcha"] p', 'A gentle pause in green.'],
+    ['.category[data-category="matcha"] p', 'Ceremonial grade, in several variations.'],
     ['.category[data-category="matcha"] .category-tag', 'SOMETHING DIFFERENT'],
     ['.category[data-category="cakes"] h3', 'Homemade cakes'],
-    ['.category[data-category="cakes"] p', 'Made here. Enjoy every last crumb.'],
+    ['.category[data-category="cakes"] p', 'Five recipes, each with its own story.'],
     ['.category[data-category="cakes"] .category-tag', 'A LITTLE PLEASURE'],
-    ['.menu-note', 'Our selection changes from day to day. Discover today’s treats and prices at the counter.'],
-    ['.menu-fallback #menu-coffee h3', 'Coffees'],
-    ['.menu-fallback #menu-coffee p', 'Coffee · Latte'],
-    ['.menu-fallback #menu-matcha h3', 'Matcha'],
-    ['.menu-fallback #menu-matcha p', 'Matcha · Rose matcha'],
-    ['.menu-fallback #menu-cakes h3', 'Homemade cakes'],
-    ['.menu-fallback #menu-cakes p', 'Carrot cake · Matcha & white chocolate cake'],
+    ['.category[data-category="others"] h3', 'Other drinks'],
+    ['.category[data-category="others"] p', 'Tea, chocolate, water and chilled drinks.'],
+    ['.category[data-category="others"] .category-tag', 'FOR EVERY TASTE'],
+    ['.category[data-category="extras"] h3', 'Extras'],
+    ['.category[data-category="extras"] p', 'Make it yours, hot or iced.'],
+    ['.category[data-category="extras"] .category-tag', 'A LITTLE EXTRA'],
+    ['.menu-note', 'Explore the full menu and prices in each category. Availability may vary.'],
     ['.visit-section .section-label span:first-child', '04 / COME SEE US'],
     ['.visit-section .section-label span:last-child', 'SEE YOU SOON.'],
     ['.visit-layout .eyebrow', 'LOOK FOR THE LITTLE YELLOW FAÇADE.'],
@@ -73,26 +76,7 @@
     ['.close-menu', 'Close'],
     ['.dialog-aside > p', 'Come in.<br><em>Take your time.</em>', 'html'],
     ['.dialog-content .eyebrow', 'WELCOME TO THE COUNTER'],
-    ['#dialog-title', 'A little joy<br><em>on the menu.</em>', 'html'],
-    ['.menu-tabs [data-tab="coffee"]', 'Coffee'],
-    ['.menu-tabs [data-tab="matcha"]', 'Matcha'],
-    ['.menu-tabs [data-tab="cakes"]', 'Homemade cakes'],
-    ['#panel-coffee .panel-intro', 'The pleasure of a coffee break.'],
-    ['#panel-coffee .menu-item:first-of-type h3', 'Coffee'],
-    ['#panel-coffee .menu-item:first-of-type span', 'A little ritual'],
-    ['#panel-coffee .menu-item:nth-of-type(2) h3', 'Latte'],
-    ['#panel-coffee .menu-item:nth-of-type(2) span', 'Smooth and gentle'],
-    ['#panel-matcha .panel-intro', 'See the day in green.'],
-    ['#panel-matcha .menu-item:first-of-type h3', 'Matcha'],
-    ['#panel-matcha .menu-item:first-of-type span', 'The favourite'],
-    ['#panel-matcha .menu-item:nth-of-type(2) h3', 'Rose matcha'],
-    ['#panel-matcha .menu-item:nth-of-type(2) span', 'A floral pause'],
-    ['#panel-cakes .panel-intro', 'Homemade cakes, every day.'],
-    ['#panel-cakes .menu-item:first-of-type h3', 'Carrot cake'],
-    ['#panel-cakes .menu-item:first-of-type span', 'A slice of happiness'],
-    ['#panel-cakes .menu-item:nth-of-type(2) h3', 'Matcha & white chocolate'],
-    ['#panel-cakes .menu-item:nth-of-type(2) span', 'The lovely pair'],
-    ['.dialog-note', 'A glimpse of our drinks and treats.<br>Discover today’s selection and prices at the counter, subject to availability.', 'html'],
+    ['#dialog-title', 'The menu<br><em>at Josephine.</em>', 'html'],
     ['.dialog-content .text-link', 'Café news on Instagram']
   ];
 
@@ -100,6 +84,10 @@
     const element = document.querySelector(selector);
     return element && { element, english, kind, french: kind === 'html' ? element.innerHTML : element.textContent };
   }).filter(Boolean);
+  const menuEntries = [...document.querySelectorAll('#menu-dialog [data-en]')].map(element => ({
+    element, french: element.textContent, english: element.dataset.en
+  }));
+  const menuPrices = [...document.querySelectorAll('#menu-dialog .menu-price[data-price]')];
   const attributes = [
     ['.header > .wordmark', 'aria-label', 'Josephine Café, home'],
     ['.header nav', 'aria-label', 'Main navigation'],
@@ -109,7 +97,7 @@
     ['.facade', 'alt', 'The yellow front of Josephine Café at 9 Rue Blacas in Nice, with its open door and wooden benches.'],
     ['.close-menu', 'aria-label', 'Close the menu'],
     ['.menu-tabs', 'aria-label', 'Menu categories'],
-    ['meta[name="description"]', 'content', 'A sunny break at Josephine Café in Nice. Coffee, matcha and homemade cakes at 9 Rue Blacas, Monday to Saturday, 9:30–17:30.']
+    ['meta[name="description"]', 'content', 'Explore Josephine Café’s menu and prices in Nice: espresso, matcha, homemade cakes and specials. 9 Rue Blacas, Monday to Saturday.']
   ].map(([selector, name, english]) => {
     const element = document.querySelector(selector);
     return element && { element, name, english, french: element.getAttribute(name) };
@@ -121,6 +109,15 @@
     entries.forEach(({ element, kind, french, english: translated }) => {
       if (kind === 'html') element.innerHTML = english ? translated : french;
       else element.textContent = english ? translated : french;
+    });
+    menuEntries.forEach(({ element, french, english: translated }) => { element.textContent = english ? translated : french; });
+    menuPrices.forEach(element => {
+      const amount = Number(element.dataset.price);
+      const decimals = Number.isInteger(amount) ? 0 : 2;
+      const formatted = new Intl.NumberFormat(english ? 'en-GB' : 'fr-FR', {
+        minimumFractionDigits: decimals, maximumFractionDigits: decimals
+      }).format(amount);
+      element.textContent = `${element.dataset.extra ? '+' : ''}${english ? `€${formatted}` : `${formatted} €`}`;
     });
     attributes.forEach(({ element, name, french, english: translated }) => element.setAttribute(name, english ? translated : french));
     document.documentElement.lang = english ? 'en' : 'fr';

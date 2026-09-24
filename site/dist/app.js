@@ -19,6 +19,8 @@
       opener = link;
       selectCategory(link.dataset.category || 'coffee');
       dialog.showModal();
+      dialog.scrollTop = 0;
+      dialog.querySelector('.menu-tabs [aria-selected="true"]').scrollIntoView({ block: 'nearest', inline: 'nearest' });
       document.body.classList.add('menu-open');
       dialog.querySelector('.close-menu').focus();
     });
