@@ -8,6 +8,11 @@ const files = [
   'index.html',
   'styles.css',
   'app.js',
+  'language.js',
+  'room.js',
+  'vendor/three.module.js',
+  'vendor/three.core.js',
+  'vendor/THREE-LICENSE.txt',
   'assets/josephine-facade.webp',
   'assets/josephine-facade-small.webp',
 ];
