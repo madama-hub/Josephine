@@ -89,9 +89,9 @@
 .header .instagram-link { display: inline-flex; }
 .header-actions .visit-link { display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; }
 .header-actions .visit-link:hover { background: var(--ink); color: var(--paper); }
-.language-switch { display: inline-flex; flex: none; overflow: hidden; border: 1px solid var(--ink); border-radius: 999px; }
-.language-switch button { min-width: 43px; min-height: 44px; padding: 8px 11px; border: 0; background: transparent; color: var(--ink); font-size: 12px; font-weight: 600; cursor: pointer; }
-.language-switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.language-switch { display: inline-flex; flex: none; overflow: hidden; border: 1px solid var(--red); border-radius: 999px; }
+.language-switch button { min-width: 43px; min-height: 44px; padding: 8px 11px; border: 0; background: transparent; color: var(--red); font-size: 12px; font-weight: 600; cursor: pointer; }
+.language-switch button[aria-pressed="true"] { background: var(--red); color: var(--paper); }
 .language-switch button:not([aria-pressed="true"]):hover { background: var(--butter); }
 
 /* A compact interactive corner inspired by the café's record wall. */
