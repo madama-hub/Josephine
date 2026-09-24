@@ -93,6 +93,7 @@
 .language-switch button { min-width: 43px; min-height: 44px; padding: 8px 11px; border: 0; background: transparent; color: var(--red); font-size: 12px; font-weight: 600; cursor: pointer; }
 .language-switch button[aria-pressed="true"] { background: var(--red); color: var(--paper); }
 .language-switch button:not([aria-pressed="true"]):hover { background: var(--butter); }
+.hero .button { border-radius: 999px; }
 
 /* A compact interactive corner inspired by the café's record wall. */
 .room-section { padding-top: 74px; padding-bottom: 95px; }
